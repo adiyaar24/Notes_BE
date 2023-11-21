@@ -15,6 +15,9 @@ const getAllNotesForUser = async (req, res) => {
 const addNoteForUser = async (req, res) => {
   const userId = req.userId;
   const { title, content } = req.body;
+  if (!title || !content) {
+    return res.status(400).json({ message: 'Title and content are required fields' });
+  }
 
   try {
     const newNote = new Note({ user_id: userId, title, content });
@@ -32,7 +35,9 @@ const updateNoteForUser = async (req, res) => {
   const userId = req.userId;
   const { id } = req.params;
   const { title, content } = req.body;
-
+  if (!title || !content) {
+    return res.status(400).json({ message: 'Title and content are required fields' });
+  }
   try {
     const updatedNote = await Note.findOneAndUpdate(
       { _id: id, user_id: userId },
