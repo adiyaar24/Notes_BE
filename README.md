@@ -46,18 +46,12 @@ Users DB Structure
 ## Folder Struture
 
 - src
-  - components
-    - Reusable React components
-  - context
-    - The context directory is where you can place React context providers. Context provides a way to share values, such as state or functions, across the component tree without having to pass them through props manually.
-  - pages
-    - Next.js auto-generated routes
-  - services
-    - This directory is used to store services or utility functions that interact with external APIs, handle data fetching, or perform other business logic. It helps keep your code organized and separates concerns.
-  - styles
-    - Global styles, styling variables, utility classes
-  - types
-    - TypeScript type definitions.This helps with static type checking and enhances code readability.
+  - controllers
+    - This is where I store my route handlers. Each controller file would handle the logic for a specific set of routes
+  - models
+    - Structure of Data Models
+  - routes/api
+    - Path to my API Routes
 
 
 
