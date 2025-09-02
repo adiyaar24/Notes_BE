@@ -1,0 +1,9 @@
+pipeline:
+  name: idp
+  identifier: idp
+  tags: {}
+  template:
+    templateRef: org.Pipe_Temp
+    versionLabel: "1.0"
+  projectIdentifier: SGWS
+  orgIdentifier: default
