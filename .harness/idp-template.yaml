@@ -1,0 +1,31 @@
+pipeline:
+  name: idp-template
+  identifier: idp_template
+  tags: {}
+  template:
+    templateRef: org.Pipe_Temp
+    versionLabel: "1.0"
+    templateInputs:
+      stages:
+        - stage:
+            identifier: stage32
+            template:
+              templateInputs:
+                type: CI
+                spec:
+                  execution:
+                    steps:
+                      - step:
+                          identifier: Git_Clone
+                          template:
+                            templateInputs:
+                              type: GitClone
+                              spec:
+                                repoName: <+input>
+      properties:
+        ci:
+          codebase:
+            repoName: <+input>
+            build: <+input>
+  projectIdentifier: SGWS
+  orgIdentifier: default
